@@ -1,0 +1,211 @@
+body, html{
+    position: unset;
+    touch-action: manipulation; /* naprimer ne moreš 2x kliknit za zoom...*/
+    height: 100%;
+    width: 100%;
+    position: fixed; /* pozicija relativna na browser window*/
+}
+
+body{
+    margin: 0px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: #fafafa;
+
+    display: flex;
+    flex-flow: column;
+
+    overflow: hidden;
+}
+
+div {
+    margin: 0px;
+    padding: 0px;
+}
+
+#canvas {
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+    display: none;
+
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+    position: fixed;
+}
+
+.menu {
+    margin:auto;
+    padding: 0px;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    /* background-color: #232b2b; */
+    background-color: #0A0B2B;
+    
+}
+
+#menu-frame{
+    margin:auto;
+}
+
+#results{
+    display: none;
+}
+
+.btn{
+    background-color: #2196F3;
+    border: none;
+    outline: none;
+    position: relative;
+    border: none;
+    color: white;
+    padding: 25px 26px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 55px;
+    margin: auto;
+    opacity: 0.65;
+    transition: 0.3s;
+    display: inline-block;
+    text-decoration: none;
+    cursor: pointer;
+    text-transform: uppercase;
+
+    -webkit-user-select: none; /* Safari */        
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+/Edge */
+    user-select: none; /* Standard */
+}
+
+.btn2{
+    background-color: #2196F3;
+    border: none;
+    outline: none;
+    position: relative;
+    border: none;
+    color: white;
+    padding: 25px 26px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 55px;
+    margin: auto;
+    display: inline-block;
+    text-decoration: none;
+    cursor: pointer;
+    text-transform: uppercase;
+
+    -webkit-user-select: none; /* Safari */        
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+/Edge */
+    user-select: none; /* Standard */
+}
+
+.btn:hover{
+    opacity: 1;
+}
+
+#score{
+    color: #fff;
+
+    margin: 50px auto;
+    text-align: center;
+    text-shadow: -1px -1px 0px rgba(255,255,255,0.3), 1px 1px 0px rgba(0,0,0,0.8);
+    color: rgb(253, 253, 253);
+    opacity: 0.6;
+    font: 700 120px 'Bitter'; /*debelost, velikost, font-family */
+
+    -webkit-user-select: none; /* Safari */        
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+/Edge */
+    user-select: none; /* Standard */
+}
+
+.logo{
+    margin: auto;
+    width: 100%;
+    margin-bottom: 0px;
+    margin-top: 0%;
+}
+
+#results .logo{
+    margin-top: 30px;
+}
+.dropdown {
+    margin-top: -320px;
+    position: relative;
+    display: inline-block;
+    align-content: center;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    z-index: 1;
+    width: 100%;
+  }
+  
+  .dropdown-content a {
+    text-align: center;
+    color: #2196F3;
+    font-size: 20pt;
+    padding: 6px 6px;
+    text-decoration: none;
+    display: block;
+
+    -webkit-user-select: none; /* Safari */        
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+/Edge */
+    user-select: none; /* Standard */
+  }
+
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  
+  .btn:hover, .dropdown:hover .btn {
+    background-color: #0b7dda;
+  }
+
+  .dropdown-content a:hover {background-color: #ddd}
+
+@media only screen and (max-width: 600px){
+    
+    .btn{
+        padding: 10px 15px;
+        font-size: 35px;
+        margin-top: 10%;
+    }
+    .btn2{
+        padding: 10px 15px;
+        font-size: 20px;
+        margin-top: 10%;
+    }
+
+    .dropdown {
+        margin-top: -170px;
+        display: inline-block;
+      }
+
+      .dropdown-content a {
+        text-align: center;
+        color: #2196F3;
+        font-size: 18pt;
+        padding: 6px 6px;
+        text-decoration: none;
+        display: block;
+    
+        -webkit-user-select: none; /* Safari */        
+        -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* IE10+/Edge */
+        user-select: none; /* Standard */   
+    }
+
+    .logo{
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
+}

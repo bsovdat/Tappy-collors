@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- za starejše verzije internet explorer -->
+
+        <title>Tappy Colors</title>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- začne na zoom 100%  -->
+        <meta name="mobile-web-app-capable" content="yes"> <!-- lahko narediš ikono na homescreenu na telefonu -->
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta 
+        name='viewport' 
+        content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' 
+        />
+
+        <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
+        <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">                                <!-- icone -->
+        <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+        <link rel="icon" type="image/png" sizes="192x192"  href="media/icons/android-icon-192x192.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="media/icons/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="96x96" href="media/icons/favicon-96x96.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="media/icons/favicon-16x16.png">
+        <link rel="manifest" href="/manifest.json">
+        <meta name="msapplication-TileColor" content="#ffffff">
+        <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+        <meta name="theme-color" content="#ffffff">
+
+        <meta property="og:image" content="" /> <!--za-fb.png-->
+        <meta property="og:type" content="website" />           <!-- Za url sliko in naslov spletne strani na linku  -->
+        <meta property="og:url" content="" />
+        <meta property="og:title" content="Tappy colors" />
+
+        <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+
+        <script src="colors.js"> </script>
+        <script src="game.js"> </script>
+        <script src="menu.js"> </script>
+
+        <link rel="icon" href="favicon_io/favicon-32x32.png" type="image/x-icon">
+
+        <meta name="theme-color" content="#db5945"> <!--barva zgornjega dela zavihka na telefonu-->
+
+    </head>
+
+    <body id="body">
+        <div id="menu-frame">
+            <canvas id="canvas" onmousedown="onCanvasClick(event)" ontouchstart="" height="100" width="100"></canvas> <!-- naredi canvas -->
+            <div class="menu" id="menu">
+                <img class="logo" src="media/colors_logo_obrezana.png"> <!-- prilepi logotip -->
+
+                <div class="dropdown"> 
+                    <button class="btn" >play</button>
+
+                    <div class="dropdown-content"> <!-- dropdown menu, ki se prikaže ko z miško preletimo gumb PLAY -->
+
+                        <a class="button"  onclick="showGame(3)" >Easy</a>
+                        <a class="button"  onclick="showGame(4)" >Medium</a>
+                        <a class="button"  onclick="showGame(5)" >Hard</a>
+
+                    </div>
+                </div>
+            </div>
+            <div class="menu" id="results"> <!-- menu, ki sep prikaže po končani igri -->
+                <img class="logo" onclick="backToMenu()" src="media/colors_logo_obrezana.png"> <!--logotip, s klikom nanj se vrnemo na začetno stran  -->
+                <button class="btn2"  onclick="showGame(0)">play again</button>
+                <h1 id="score"></h1> <!-- izpis končnega števila točk -->
+            </div>
+ 
+        </div>
+
+        <script>
+
+            window.onload = function(e){ //funkcija, ki se izvaja ko se naloži stran
+
+                resize();
+
+                if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) { // preverja če se je spletna stran odprla na telefonu
+                    document.getElementById("canvas").setAttribute("onmousedown", "");
+                    document.getElementById("canvas").setAttribute("ontouchstart", "onCanvasClick(event)");
+                    mobile=true;
+                }
+                
+            }
+
+            function resize(){ //funkcija, ki priredi širino in višino menuja glede na dimenzije zaslona uporabnika
+                height = Math.max(document.documentElement.clientHeight, window.innerHeight, document.getElementById("body").clientHeight || 0);
+                width = Math.max(document.documentElement.clientWidth, window.innerWidth, document.getElementById("body").clientWidth || 0);
+                if((width*3)>(height*2)){
+                    width = height*2/3;
+                }
+                
+                document.getElementById("menu-frame").style.width = Math.round(width) +"px";
+                document.getElementById("menu-frame").style.height = Math.round(height) +"px";
+            }
+        </script>
+    </body>
+
+</html>
