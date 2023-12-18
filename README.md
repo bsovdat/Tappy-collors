@@ -8,7 +8,7 @@ Welcome to "Tappy Colors", an engaging and colorful web game that tests your ref
 
 "Tappy Colors" challenges players to deal with falling colored squares. The game's objective is straightforward yet captivating - let squares fall to the ground if their color matches the ground color, otherwise tap them to destroy them. Quick thinking and sharp reflexes are key to mastering "Tappy Colors".
 
-![in_game]()
+![in_game](in_game.jpg "in_game")
 
 ## Features
 
